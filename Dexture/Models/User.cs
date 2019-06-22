@@ -64,6 +64,7 @@ namespace Dexture.Models
         public string ContactNo { get; set; }
         public string PersonalAddress { get; set; }
 
+        public Boolean IsAccepted { get; set; }
         public ICollection<Land> Lands { get; set; }
     }
 
