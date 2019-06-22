@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Dexture.Models
 {
-    public class User
+    [Table("Users")]
+    public class Admin
     {
-        public int UserId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int AdminId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -16,27 +21,48 @@ namespace Dexture.Models
         public string PersonalAddress { get; set; }
 
     }
-
-    public class Admin : User
+    public class AgricultureOfficer
     {
-        public int AdminId { get; set; }
-    }
 
-    public class AgricultureOfficer : User
-    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AgricultureOfficerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Nic { get; set; }
+        public string ContactNo { get; set; }
+        public string PersonalAddress { get; set; }
     }
 
-    public class Buyer : User
+    public class Buyer
     {
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BuyerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Nic { get; set; }
+        public string ContactNo { get; set; }
+        public string PersonalAddress { get; set; }
     }
 
-    public class Farmer : User
+    public class Farmer
     {
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FarmerId { get; set; }
 
         public string GramaNiladariDivision { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Nic { get; set; }
+        public string ContactNo { get; set; }
+        public string PersonalAddress { get; set; }
 
         public ICollection<Land> Lands { get; set; }
     }

@@ -12,8 +12,7 @@ namespace Dexture.Models
         {
 
         }
-
-        public DbSet<User> Users { get; set; }
+        public DbSet<Land> Lands { get; set; }
 
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AgricultureOfficer> AgricultureOfficers { get; set; }
@@ -22,7 +21,6 @@ namespace Dexture.Models
 
         public DbSet<Buyer> Buyers { get; set; }
 
-        public DbSet<Land> Lands { get; set; }
 
 
     }

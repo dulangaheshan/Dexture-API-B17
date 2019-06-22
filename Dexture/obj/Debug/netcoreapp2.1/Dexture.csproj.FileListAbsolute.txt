@@ -1,0 +1,14 @@
+F:\DotNet\Dexture\Dexture\bin\Debug\netcoreapp2.1\Dexture.deps.json
+F:\DotNet\Dexture\Dexture\bin\Debug\netcoreapp2.1\Dexture.runtimeconfig.json
+F:\DotNet\Dexture\Dexture\bin\Debug\netcoreapp2.1\Dexture.runtimeconfig.dev.json
+F:\DotNet\Dexture\Dexture\bin\Debug\netcoreapp2.1\Dexture.dll
+F:\DotNet\Dexture\Dexture\bin\Debug\netcoreapp2.1\Dexture.pdb
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.csprojAssemblyReference.cache
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.csproj.CoreCompileInputs.cache
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorAssemblyInfo.cache
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorAssemblyInfo.cs
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.AssemblyInfoInputs.cache
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.AssemblyInfo.cs
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorTargetAssemblyInfo.cache
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.dll
+F:\DotNet\Dexture\Dexture\obj\Debug\netcoreapp2.1\Dexture.pdb
