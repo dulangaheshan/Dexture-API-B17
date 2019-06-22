@@ -27,11 +27,18 @@ namespace Dexture.Models
         public int AgricultureOfficerId { get; set; }
     }
 
+    public class Buyer : User
+    {
+        public int BuyerId { get; set; }
+    }
+
     public class Farmer : User
     {
         public int FarmerId { get; set; }
 
         public string GramaNiladariDivision { get; set; }
+
+        public ICollection<Land> Lands { get; set; }
     }
 
 

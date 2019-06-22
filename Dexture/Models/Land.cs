@@ -7,5 +7,10 @@ namespace Dexture.Models
 {
     public class Land
     {
+        public int LandId { get; set; }
+        public double Size { get; set; }
+        public string Location { get; set; }
+
+      
     }
 }
