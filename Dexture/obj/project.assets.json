@@ -11801,11 +11801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\D.ShaN\\source\\repos\\Dexture\\Dexture\\Dexture.csproj",
+      "projectUniqueName": "F:\\DotNet\\Dexture\\Dexture\\Dexture.csproj",
       "projectName": "Dexture",
-      "projectPath": "C:\\Users\\D.ShaN\\source\\repos\\Dexture\\Dexture\\Dexture.csproj",
+      "projectPath": "F:\\DotNet\\Dexture\\Dexture\\Dexture.csproj",
       "packagesPath": "C:\\Users\\D.ShaN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\D.ShaN\\source\\repos\\Dexture\\Dexture\\obj\\",
+      "outputPath": "F:\\DotNet\\Dexture\\Dexture\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
