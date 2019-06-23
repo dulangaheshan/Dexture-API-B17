@@ -20,6 +20,8 @@ namespace Dexture.Models
         public string ContactNo { get; set; }
         public string PersonalAddress { get; set; }
 
+        public string Password { get; set; }
+
     }
     public class AgricultureOfficer
     {
@@ -33,6 +35,8 @@ namespace Dexture.Models
         public string Nic { get; set; }
         public string ContactNo { get; set; }
         public string PersonalAddress { get; set; }
+
+        public string Password { get; set; }
     }
 
     public class Buyer
@@ -47,6 +51,8 @@ namespace Dexture.Models
         public string Nic { get; set; }
         public string ContactNo { get; set; }
         public string PersonalAddress { get; set; }
+
+        public string Password { get; set; }
     }
 
     public class Farmer
@@ -64,9 +70,13 @@ namespace Dexture.Models
         public string ContactNo { get; set; }
         public string PersonalAddress { get; set; }
 
+        public string Password { get; set; }
+
         public Boolean IsAccepted { get; set; }
+        [ForeignKey("FarmerId")]
         public ICollection<Land> Lands { get; set; }
     }
 
 
 }
+

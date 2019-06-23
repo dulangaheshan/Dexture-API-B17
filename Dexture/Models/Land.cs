@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,6 +16,10 @@ namespace Dexture.Models
         public double Size { get; set; }
         public string Location { get; set; }
 
-      
+        public int FarmerId { get; set; }
+        [JsonIgnore]
+        public virtual Farmer Farmer{ get; set; }
+
+
     }
 }

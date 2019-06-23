@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dexture.Models;
+using Dexture.Models.DataManager;
+using Dexture.Models.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,9 @@ namespace Dexture
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Context>(opts => opts.UseSqlServer(Configuration["ConnectionString:DextureDB"]));
+            services.AddScoped<IDataRepository<Farmer>, FarmerManager>();
+            services.AddScoped<IDataRepository<Admin>, AdminManager>();
+            services.AddScoped<IDataRepository<Land>, LandManager>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -43,6 +48,9 @@ namespace Dexture
             {
                 app.UseHsts();
             }
+
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
 
             app.UseHttpsRedirection();
             app.UseMvc();
