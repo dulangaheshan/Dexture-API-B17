@@ -65,10 +65,14 @@ namespace Dexture.Controllers
             }
             else
             {
-                if(farmerTOLogin.Password == login.Password)
+                if(farmerTOLogin.Password == login.Password  && farmerTOLogin.IsAccepted == true)
                 {
-                    return Ok();
+                    return new JsonResult(farmerTOLogin);
 
+                }
+                else if(farmerTOLogin.Password == login.Password && farmerTOLogin.IsAccepted == false)
+                {
+                    return new JsonResult(new { accepted = false });
                 }
                 else
                 {

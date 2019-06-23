@@ -14,7 +14,9 @@ namespace Dexture.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LandId { get; set; }
         public double Size { get; set; }
-        public string Location { get; set; }
+        public string Latitude { get; set; }
+
+        public string Longitude { get; set; }
 
         public int FarmerId { get; set; }
         [JsonIgnore]
