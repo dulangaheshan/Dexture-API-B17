@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dexture.Models.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace Dexture.Models
         public DbSet<Farmer> Farmers { get; set; }
 
         public DbSet<Buyer> Buyers { get; set; }
+        public DbSet<Harvest> Harvest  { get; set; }
+        public DbSet<FutureCultivation> FutureCultivation { get; set; }
+
+
 
 
 

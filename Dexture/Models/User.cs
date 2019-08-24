@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dexture.Models.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -75,6 +76,9 @@ namespace Dexture.Models
         public Boolean IsAccepted { get; set; }
         [ForeignKey("FarmerId")]
         public ICollection<Land> Lands { get; set; }
+
+        [ForeignKey("FarmerId")]
+        public ICollection<FutureCultivation> FutureCultivations { get; set; }
     }
 
 
