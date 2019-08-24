@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Dexture.Models
@@ -79,6 +80,7 @@ namespace Dexture.Models
 
         [ForeignKey("FarmerId")]
         public ICollection<FutureCultivation> FutureCultivations { get; set; }
+        
     }
 
 
