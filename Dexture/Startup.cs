@@ -52,7 +52,7 @@ namespace Dexture
             services.AddScoped<IDataRepository<Farmer>, FarmerManager>();
             services.AddScoped<IDataRepository<Admin>, AdminManager>();
             services.AddScoped<IDataRepository<Land>, LandManager>();
-            //services.AddScoped<IDataRepository<Harvest>, LandManager>();
+            services.AddScoped<IDataRepository<Harvest>, HarvestManager>();
             services.AddScoped<IDataRepository<FutureCultivation>, FutureCultivationManager>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

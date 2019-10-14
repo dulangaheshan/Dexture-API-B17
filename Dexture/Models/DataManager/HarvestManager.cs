@@ -9,6 +9,13 @@ namespace Dexture.Models.DataManager
     public class HarvestManager : IDataRepository<Harvest>
     {
         readonly Context _harvestContext;
+
+        public HarvestManager(Context context)
+        {
+            _harvestContext = context;
+        }
+
+
         public void Add(Harvest entity)
         {
             throw new NotImplementedException();
