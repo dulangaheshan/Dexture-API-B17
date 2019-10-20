@@ -6,22 +6,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dexture.Models
+namespace Dexture.Models.Repository
 {
-    public class Land
+    public class Generate
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int LandId { get; set; }
-        public double Size { get; set; }
-        public string Latitude { get; set; }
-
-        public string Longitude { get; set; }
-
-        public int FarmerId { get; set; }
+        public int GenerateId { get; set; }
         [JsonIgnore]
-        public virtual Farmer Farmers{ get; set; }
+        public virtual Harvest Harvests { get; set; }
 
-
+        [JsonIgnore]
+        public virtual FutureCultivation FutureCultivations { get; set; }
     }
 }

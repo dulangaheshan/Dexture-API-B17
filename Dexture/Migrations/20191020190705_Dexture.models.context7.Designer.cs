@@ -4,14 +4,16 @@ using Dexture.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dexture.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191020190705_Dexture.models.context7")]
+    partial class Dexturemodelscontext7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +125,7 @@ namespace Dexture.Migrations
                     b.ToTable("Farmers");
                 });
 
-            modelBuilder.Entity("Dexture.Models.Land", b =>
+            modelBuilder.Entity("Dexture.Models.Prediction", b =>
                 {
                     b.Property<int>("LandId")
                         .ValueGeneratedOnAdd()
@@ -141,7 +143,7 @@ namespace Dexture.Migrations
 
                     b.HasIndex("FarmerId");
 
-                    b.ToTable("Lands");
+                    b.ToTable("Prediction");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.FutureCultivation", b =>
@@ -201,39 +203,10 @@ namespace Dexture.Migrations
                     b.ToTable("Harvests");
                 });
 
-            modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
-                {
-                    b.Property<int>("PredictionID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Date");
-
-                    b.Property<double>("DemandRate");
-
-                    b.Property<int?>("FarmerId");
-
-                    b.Property<int?>("FutureCultivationsCultivationId");
-
-                    b.Property<int?>("HarvestsHarvestId");
-
-                    b.Property<double>("Quantity");
-
-                    b.HasKey("PredictionID");
-
-                    b.HasIndex("FarmerId");
-
-                    b.HasIndex("FutureCultivationsCultivationId");
-
-                    b.HasIndex("HarvestsHarvestId");
-
-                    b.ToTable("predictions");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Land", b =>
+            modelBuilder.Entity("Dexture.Models.Prediction", b =>
                 {
                     b.HasOne("Dexture.Models.Farmer", "Farmers")
-                        .WithMany()
+                        .WithMany("Lands")
                         .HasForeignKey("FarmerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -255,21 +228,6 @@ namespace Dexture.Migrations
                     b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
                         .WithMany("generates")
                         .HasForeignKey("HarvestId");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
-                {
-                    b.HasOne("Dexture.Models.Farmer")
-                        .WithMany("Lands")
-                        .HasForeignKey("FarmerId");
-
-                    b.HasOne("Dexture.Models.Repository.FutureCultivation", "FutureCultivations")
-                        .WithMany()
-                        .HasForeignKey("FutureCultivationsCultivationId");
-
-                    b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
-                        .WithMany()
-                        .HasForeignKey("HarvestsHarvestId");
                 });
 #pragma warning restore 612, 618
         }

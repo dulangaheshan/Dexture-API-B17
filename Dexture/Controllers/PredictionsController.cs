@@ -12,56 +12,56 @@ namespace Dexture.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HarvestsController : ControllerBase
+    public class PredictionsController : ControllerBase
     {
         private readonly Context _context;
 
-        public HarvestsController(Context context)
+        public PredictionsController(Context context)
         {
             _context = context;
         }
 
-        // GET: api/Harvests
+        // GET: api/Predictions
         [HttpGet]
-        public IEnumerable<Harvest> GetHarvest()
+        public IEnumerable<Prediction> Getpredictions()
         {
-            return _context.Harvests;
+            return _context.predictions;
         }
 
-        // GET: api/Harvests/5
+        // GET: api/Predictions/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetHarvest([FromRoute] int id)
+        public async Task<IActionResult> GetPrediction([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var harvest = await _context.Harvests.FindAsync(id);
+            var prediction = await _context.predictions.FindAsync(id);
 
-            if (harvest == null)
+            if (prediction == null)
             {
                 return NotFound();
             }
 
-            return Ok(harvest);
+            return Ok(prediction);
         }
 
-        // PUT: api/Harvests/5
+        // PUT: api/Predictions/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutHarvest([FromRoute] int id, [FromBody] Harvest harvest)
+        public async Task<IActionResult> PutPrediction([FromRoute] int id, [FromBody] Prediction prediction)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != harvest.HarvestId)
+            if (id != prediction.PredictionID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(harvest).State = EntityState.Modified;
+            _context.Entry(prediction).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +69,7 @@ namespace Dexture.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!HarvestExists(id))
+                if (!PredictionExists(id))
                 {
                     return NotFound();
                 }
@@ -82,45 +82,45 @@ namespace Dexture.Controllers
             return NoContent();
         }
 
-        // POST: api/Harvests
+        // POST: api/Predictions
         [HttpPost]
-        public async Task<IActionResult> PostHarvest([FromBody] Harvest harvest)
+        public async Task<IActionResult> PostPrediction([FromBody] Prediction prediction)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Harvests.Add(harvest);
+            _context.predictions.Add(prediction);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetHarvest", new { id = harvest.HarvestId }, harvest);
+            return CreatedAtAction("GetPrediction", new { id = prediction.PredictionID }, prediction);
         }
 
-        // DELETE: api/Harvests/5
+        // DELETE: api/Predictions/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteHarvest([FromRoute] int id)
+        public async Task<IActionResult> DeletePrediction([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var harvest = await _context.Harvests.FindAsync(id);
-            if (harvest == null)
+            var prediction = await _context.predictions.FindAsync(id);
+            if (prediction == null)
             {
                 return NotFound();
             }
 
-            _context.Harvests.Remove(harvest);
+            _context.predictions.Remove(prediction);
             await _context.SaveChangesAsync();
 
-            return Ok(harvest);
+            return Ok(prediction);
         }
 
-        private bool HarvestExists(int id)
+        private bool PredictionExists(int id)
         {
-            return _context.Harvests.Any(e => e.HarvestId == id);
+            return _context.predictions.Any(e => e.PredictionID == id);
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Dexture.Models.DataManager
             throw new NotImplementedException();
         }
 
-        public Land Get(long id)
+        public Prediction Get(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Land Get(string email)
+        public Prediction Get(string email)
         {
             throw new NotImplementedException();
         }
@@ -42,13 +42,34 @@ namespace Dexture.Models.DataManager
             return _landContext.Lands.ToList();
         }
 
-        public IEnumerable<Land> Getselected(long id)
+        public IEnumerable<Prediction> Getselected(long id)
         {
-            var data = _landContext.Lands.Where(e => e.FarmerId == id).ToList();
-            return data;
+            //var data = _landContext.Lands.Where(e => e.FarmerId == id).ToList();
+            //return data;
+            throw new NotImplementedException();
+        }
+
+        public void Update(Prediction dbEntity, Prediction entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Land dbEntity, Land entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        Land IDataRepository<Land>.Get(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Land IDataRepository<Land>.Get(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Land> IDataRepository<Land>.Getselected(long id)
         {
             throw new NotImplementedException();
         }

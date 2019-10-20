@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Dexture.Migrations
 {
-    public partial class DextureModelsContext : Migration
+    public partial class Dexturemodelscontext : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -13,7 +13,7 @@ namespace Dexture.Models
         {
 
         }
-        public DbSet<Land> Lands { get; set; }
+        
 
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AgricultureOfficer> AgricultureOfficers { get; set; }
@@ -21,9 +21,11 @@ namespace Dexture.Models
         public DbSet<Farmer> Farmers { get; set; }
 
         public DbSet<Buyer> Buyers { get; set; }
-        public DbSet<Harvest> Harvest  { get; set; }
-        public DbSet<FutureCultivation> FutureCultivation { get; set; }
-
+        public DbSet<Harvest> Harvests  { get; set; }
+        public DbSet<FutureCultivation> FutureCultivations { get; set; }
+        public DbSet<Land> Lands { get; set; }
+        public DbSet<Generate> Generates { get; set; }
+        public DbSet<Prediction> predictions { get; set; }
 
 
 

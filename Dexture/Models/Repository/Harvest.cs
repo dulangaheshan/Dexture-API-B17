@@ -16,6 +16,6 @@ namespace Dexture.Models.Repository
         public String SellingQuantity { get; set; }
         public String AllQuantity { get; set; }
         [ForeignKey("HarvestId")]
-        public ICollection<FutureCultivation> FutureCultivations { get; set; }
+        public ICollection<Generate> generates { get; set; }
     }
 }

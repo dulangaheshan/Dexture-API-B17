@@ -4,14 +4,16 @@ using Dexture.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dexture.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191020185907_Dexture.models.context4")]
+    partial class Dexturemodelscontext4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +125,7 @@ namespace Dexture.Migrations
                     b.ToTable("Farmers");
                 });
 
-            modelBuilder.Entity("Dexture.Models.Land", b =>
+            modelBuilder.Entity("Dexture.Models.Prediction", b =>
                 {
                     b.Property<int>("LandId")
                         .ValueGeneratedOnAdd()
@@ -141,7 +143,7 @@ namespace Dexture.Migrations
 
                     b.HasIndex("FarmerId");
 
-                    b.ToTable("Lands");
+                    b.ToTable("Prediction");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.FutureCultivation", b =>
@@ -181,7 +183,7 @@ namespace Dexture.Migrations
 
                     b.HasIndex("HarvestId");
 
-                    b.ToTable("Generates");
+                    b.ToTable("Generate");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.Harvest", b =>
@@ -201,46 +203,17 @@ namespace Dexture.Migrations
                     b.ToTable("Harvests");
                 });
 
-            modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
+            modelBuilder.Entity("Dexture.Models.Prediction", b =>
                 {
-                    b.Property<int>("PredictionID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Date");
-
-                    b.Property<double>("DemandRate");
-
-                    b.Property<int?>("FarmerId");
-
-                    b.Property<int?>("FutureCultivationsCultivationId");
-
-                    b.Property<int?>("HarvestsHarvestId");
-
-                    b.Property<double>("Quantity");
-
-                    b.HasKey("PredictionID");
-
-                    b.HasIndex("FarmerId");
-
-                    b.HasIndex("FutureCultivationsCultivationId");
-
-                    b.HasIndex("HarvestsHarvestId");
-
-                    b.ToTable("predictions");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Land", b =>
-                {
-                    b.HasOne("Dexture.Models.Farmer", "Farmers")
-                        .WithMany()
+                    b.HasOne("Dexture.Models.Farmer", "Farmer")
+                        .WithMany("Lands")
                         .HasForeignKey("FarmerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.FutureCultivation", b =>
                 {
-                    b.HasOne("Dexture.Models.Farmer", "Farmers")
+                    b.HasOne("Dexture.Models.Farmer", "Farmer")
                         .WithMany("FutureCultivations")
                         .HasForeignKey("FarmerId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -248,28 +221,13 @@ namespace Dexture.Migrations
 
             modelBuilder.Entity("Dexture.Models.Repository.Generate", b =>
                 {
-                    b.HasOne("Dexture.Models.Repository.FutureCultivation", "FutureCultivations")
+                    b.HasOne("Dexture.Models.Repository.FutureCultivation", "FutureCultivation")
                         .WithMany("generates")
                         .HasForeignKey("CultivationId");
 
-                    b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
+                    b.HasOne("Dexture.Models.Repository.Harvest", "Harvest")
                         .WithMany("generates")
                         .HasForeignKey("HarvestId");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
-                {
-                    b.HasOne("Dexture.Models.Farmer")
-                        .WithMany("Lands")
-                        .HasForeignKey("FarmerId");
-
-                    b.HasOne("Dexture.Models.Repository.FutureCultivation", "FutureCultivations")
-                        .WithMany()
-                        .HasForeignKey("FutureCultivationsCultivationId");
-
-                    b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
-                        .WithMany()
-                        .HasForeignKey("HarvestsHarvestId");
                 });
 #pragma warning restore 612, 618
         }

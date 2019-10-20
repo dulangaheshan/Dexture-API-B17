@@ -20,7 +20,10 @@ namespace Dexture.Models.Repository
 
         public int FarmerId { get; set; }
         [JsonIgnore]
-        public virtual Farmer Farmer { get; set; }
+        public virtual Farmer Farmers { get; set; }
+
+        [ForeignKey("CultivationId")]
+        public ICollection<Generate> generates { get; set; }
 
     }
 }
