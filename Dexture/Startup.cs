@@ -55,6 +55,7 @@ namespace Dexture
             services.AddScoped<IDataRepository<Harvest>, HarvestManager>();
             services.AddScoped<IDataRepository<FutureCultivation>, FutureCultivationManager>();
             services.AddScoped<IDataRepository<Prediction>, PredictionManager>();
+            services.AddScoped<IDataRepository<Auction>, AuctionManager>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

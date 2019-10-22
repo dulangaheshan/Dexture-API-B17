@@ -17,5 +17,7 @@ namespace Dexture.Models.Repository
         public String AllQuantity { get; set; }
         [ForeignKey("HarvestId")]
         public ICollection<Generate> generates { get; set; }
+
+        public virtual Auction Auction { get; set; }
     }
 }
