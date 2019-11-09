@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Dexture.Models.Repository;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,7 +21,10 @@ namespace Dexture.Models
 
         public int FarmerId { get; set; }
         [JsonIgnore]
-        public virtual Farmer Farmer{ get; set; }
+        public virtual Farmer Farmers{ get; set; }
+        [ForeignKey("LandId")]
+        public ICollection<Land_Harvest> Land_Harvests { get; set; }
+
 
 
     }

@@ -17,8 +17,13 @@ namespace Dexture.Models.DataManager
 
         public void Add(FutureCultivation entity)
         {
-            _fututeCultivationContext.FutureCultivation.Add(entity);
+            _fututeCultivationContext.FutureCultivations.Add(entity);
             _fututeCultivationContext.SaveChanges();
+        }
+
+        public long AddData(FutureCultivation entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void Delete(FutureCultivation entity)

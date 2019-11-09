@@ -38,10 +38,19 @@ namespace Dexture.Controllers
 
         // POST: api/Land
         [HttpPost]
-        public IActionResult Post([FromBody]  Land land)
+        public Boolean Post([FromBody]  Land land)
         {
-            _dataRepository.Add(land);
-            return Ok();
+            try
+            {
+                _dataRepository.Add(land);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+            
         }
 
         // PUT: api/Land/5

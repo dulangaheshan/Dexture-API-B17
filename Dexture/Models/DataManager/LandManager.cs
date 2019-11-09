@@ -22,6 +22,11 @@ namespace Dexture.Models.DataManager
             _landContext.SaveChanges();
         }
 
+        public long AddData(Land entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Land entity)
         {
             throw new NotImplementedException();
@@ -29,10 +34,10 @@ namespace Dexture.Models.DataManager
 
         public Land Get(long id)
         {
-            throw new NotImplementedException();
+           return _landContext.Lands.Where(e => e.LandId == id).SingleOrDefault();
         }
 
-        public Land Get(string email)
+        public Prediction Get(string email)
         {
             throw new NotImplementedException();
         }
@@ -46,11 +51,33 @@ namespace Dexture.Models.DataManager
         {
             var data = _landContext.Lands.Where(e => e.FarmerId == id).ToList();
             return data;
+            //throw new NotImplementedException();
+        }
+
+        public void Update(Prediction dbEntity, Prediction entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Land dbEntity, Land entity)
         {
             throw new NotImplementedException();
+        }
+
+        //Land IDataRepository<Land>.Get(long id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        Land IDataRepository<Land>.Get(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Land> IDataRepository<Land>.Getselected(long id)
+        {
+            var data = _landContext.Lands.Where(e => e.FarmerId == id).ToList();
+            return data;
         }
     }
 }

@@ -20,6 +20,11 @@ namespace Dexture.Models.DataManager
             _farmerContext.SaveChanges();
         }
 
+        public long AddData(Farmer entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Farmer entity)
         {
             throw new NotImplementedException();
@@ -44,7 +49,10 @@ namespace Dexture.Models.DataManager
 
         public IEnumerable<Farmer> Getselected(long id)
         {
-            throw new NotImplementedException();
+            yield return _farmerContext.Farmers
+                        .FirstOrDefault(e => e.FarmerId == id);
+            
+               
         }
 
         public void Update(Farmer dbEntity, Farmer entity)

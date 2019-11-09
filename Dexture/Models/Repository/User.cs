@@ -76,7 +76,7 @@ namespace Dexture.Models
 
         public Boolean IsAccepted { get; set; }
         [ForeignKey("FarmerId")]
-        public ICollection<Land> Lands { get; set; }
+        public ICollection<Prediction> Lands { get; set; }
 
         [ForeignKey("FarmerId")]
         public ICollection<FutureCultivation> FutureCultivations { get; set; }

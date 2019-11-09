@@ -4,14 +4,16 @@ using Dexture.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dexture.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191105173034_asas")]
+    partial class asas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,8 +194,6 @@ namespace Dexture.Migrations
 
                     b.Property<string>("AllQuantity");
 
-                    b.Property<string>("DateTime");
-
                     b.Property<string>("Name");
 
                     b.Property<string>("SellingQuantity");
@@ -201,25 +201,6 @@ namespace Dexture.Migrations
                     b.HasKey("HarvestId");
 
                     b.ToTable("Harvests");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Repository.Land_Harvest", b =>
-                {
-                    b.Property<int>("LAnd_Harvest")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("HarvestId");
-
-                    b.Property<int?>("LandId");
-
-                    b.HasKey("LAnd_Harvest");
-
-                    b.HasIndex("HarvestId");
-
-                    b.HasIndex("LandId");
-
-                    b.ToTable("land_Harvests");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
@@ -276,17 +257,6 @@ namespace Dexture.Migrations
                     b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
                         .WithMany("generates")
                         .HasForeignKey("HarvestId");
-                });
-
-            modelBuilder.Entity("Dexture.Models.Repository.Land_Harvest", b =>
-                {
-                    b.HasOne("Dexture.Models.Repository.Harvest", "Harvests")
-                        .WithMany("Land_Harvests")
-                        .HasForeignKey("HarvestId");
-
-                    b.HasOne("Dexture.Models.Land", "Lands")
-                        .WithMany("Land_Harvests")
-                        .HasForeignKey("LandId");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>

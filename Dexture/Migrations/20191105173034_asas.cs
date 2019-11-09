@@ -2,7 +2,7 @@
 
 namespace Dexture.Migrations
 {
-    public partial class DextureModelsContexts3 : Migration
+    public partial class asas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
