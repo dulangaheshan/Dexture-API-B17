@@ -14,9 +14,9 @@ namespace Dexture.Controllers
     public class LandController : ControllerBase
     {
 
-        private readonly IDataRepository<Prediction> _dataRepository;
+        private readonly IDataRepository<Land> _dataRepository;
 
-        public LandController(IDataRepository<Prediction> dataRepository)
+        public LandController(IDataRepository<Land> dataRepository)
         {
             _dataRepository = dataRepository;
         }
@@ -24,7 +24,7 @@ namespace Dexture.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            IEnumerable<Prediction> lands = _dataRepository.GetAll();
+            IEnumerable<Land> lands = _dataRepository.GetAll();
             return Ok(lands);
         }
 
@@ -38,10 +38,19 @@ namespace Dexture.Controllers
 
         // POST: api/Land
         [HttpPost]
-        public IActionResult Post([FromBody]  Prediction land)
+        public Boolean Post([FromBody]  Land land)
         {
-            _dataRepository.Add(land);
-            return Ok();
+            try
+            {
+                _dataRepository.Add(land);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+            
         }
 
         // PUT: api/Land/5

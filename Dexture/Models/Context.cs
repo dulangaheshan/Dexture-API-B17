@@ -26,7 +26,7 @@ namespace Dexture.Models
         public DbSet<Land> Lands { get; set; }
         public DbSet<Generate> Generates { get; set; }
         public DbSet<Prediction> predictions { get; set; }
-        public DbSet<Auction> Auctions { get; set; }
+        public DbSet<Land_Harvest> land_Harvests { get; set; }
 
 
 

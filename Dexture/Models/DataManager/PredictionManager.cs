@@ -21,6 +21,11 @@ namespace Dexture.Models.DataManager
             _predictionContext.SaveChanges();
         }
 
+        public long AddData(Prediction entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Prediction entity)
         {
             _predictionContext.Remove(entity);

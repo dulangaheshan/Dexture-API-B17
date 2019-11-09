@@ -15,5 +15,6 @@ namespace Dexture.Models.Repository
         void Add(TEntity entity);
         void Update(TEntity dbEntity, TEntity entity);
         void Delete(TEntity entity);
+        long AddData(TEntity entity);
     }
 }

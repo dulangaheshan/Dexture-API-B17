@@ -34,6 +34,13 @@ namespace Dexture.Controllers
             IEnumerable<Farmer> farmers = _datarepository.GetAll();
             return Ok(farmers);
         }
+        
+        [HttpGet("{id}")]
+        public IActionResult Get(long id)
+        {
+            return Ok(_datarepository.Getselected(id));
+
+        }
 
         [HttpPost]
 
@@ -74,7 +81,7 @@ namespace Dexture.Controllers
                 if(farmerTOLogin.Password == login.Password  && farmerTOLogin.IsAccepted == true)
                 {
                     string token = BuildToken(farmerTOLogin);
-                    return new JsonResult(new { token= token });
+                    return new JsonResult(new { token= token,farmer = farmerTOLogin });
 
                 }
                 else if(farmerTOLogin.Password == login.Password && farmerTOLogin.IsAccepted == false)

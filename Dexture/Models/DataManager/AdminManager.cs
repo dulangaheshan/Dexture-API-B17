@@ -21,6 +21,11 @@ namespace Dexture.Models.DataManager
             _adminContext.SaveChanges();
         }
 
+        public long AddData(Admin entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Admin entity)
         {
             throw new NotImplementedException();

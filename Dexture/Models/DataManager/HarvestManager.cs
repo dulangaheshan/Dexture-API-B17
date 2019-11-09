@@ -18,7 +18,18 @@ namespace Dexture.Models.DataManager
 
         public void Add(Harvest entity)
         {
-            throw new NotImplementedException();
+            _harvestContext.Harvests.Add(entity);
+            // yield return entity.HarvestId;
+            _harvestContext.SaveChanges();
+           
+        }
+
+        public long AddData(Harvest entity)
+        {
+            _harvestContext.Harvests.Add(entity);
+            _harvestContext.SaveChanges();
+            return entity.HarvestId;
+
         }
 
         public void Delete(Harvest entity)

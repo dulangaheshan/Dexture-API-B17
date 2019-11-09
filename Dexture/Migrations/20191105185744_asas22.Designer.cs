@@ -4,14 +4,16 @@ using Dexture.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dexture.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191105185744_asas22")]
+    partial class asas22
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,8 +194,6 @@ namespace Dexture.Migrations
 
                     b.Property<string>("AllQuantity");
 
-                    b.Property<string>("DateTime");
-
                     b.Property<string>("Name");
 
                     b.Property<string>("SellingQuantity");
@@ -219,7 +219,7 @@ namespace Dexture.Migrations
 
                     b.HasIndex("LandId");
 
-                    b.ToTable("land_Harvests");
+                    b.ToTable("Land_Harvest");
                 });
 
             modelBuilder.Entity("Dexture.Models.Repository.Prediction", b =>
