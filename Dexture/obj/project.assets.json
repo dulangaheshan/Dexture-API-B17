@@ -12533,23 +12533,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Janaka\\.nuget\\packages\\": {},
+    "C:\\Users\\D.ShaN\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\software project\\Dexture-API-B17-dev\\Dexture\\Dexture.csproj",
+      "projectUniqueName": "F:\\DotNet\\Dexture-API-B17-dev\\Dexture\\Dexture.csproj",
       "projectName": "Dexture",
-      "projectPath": "E:\\software project\\Dexture-API-B17-dev\\Dexture\\Dexture.csproj",
-      "packagesPath": "C:\\Users\\Janaka\\.nuget\\packages\\",
-      "outputPath": "E:\\software project\\Dexture-API-B17-dev\\Dexture\\obj\\",
+      "projectPath": "F:\\DotNet\\Dexture-API-B17-dev\\Dexture\\Dexture.csproj",
+      "packagesPath": "C:\\Users\\D.ShaN\\.nuget\\packages\\",
+      "outputPath": "F:\\DotNet\\Dexture-API-B17-dev\\Dexture\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Janaka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\D.ShaN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
