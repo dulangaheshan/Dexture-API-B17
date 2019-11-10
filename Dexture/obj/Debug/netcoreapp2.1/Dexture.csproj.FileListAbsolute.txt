@@ -26,3 +26,17 @@ E:\software project\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.
 E:\software project\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorTargetAssemblyInfo.cache
 E:\software project\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.dll
 E:\software project\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.pdb
+F:\DotNet\Dexture-API-B17-dev\Dexture\bin\Debug\netcoreapp2.1\Dexture.deps.json
+F:\DotNet\Dexture-API-B17-dev\Dexture\bin\Debug\netcoreapp2.1\Dexture.runtimeconfig.json
+F:\DotNet\Dexture-API-B17-dev\Dexture\bin\Debug\netcoreapp2.1\Dexture.runtimeconfig.dev.json
+F:\DotNet\Dexture-API-B17-dev\Dexture\bin\Debug\netcoreapp2.1\Dexture.dll
+F:\DotNet\Dexture-API-B17-dev\Dexture\bin\Debug\netcoreapp2.1\Dexture.pdb
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.csprojAssemblyReference.cache
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.csproj.CoreCompileInputs.cache
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorAssemblyInfo.cache
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorAssemblyInfo.cs
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.AssemblyInfoInputs.cache
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.AssemblyInfo.cs
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.RazorTargetAssemblyInfo.cache
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.dll
+F:\DotNet\Dexture-API-B17-dev\Dexture\obj\Debug\netcoreapp2.1\Dexture.pdb
